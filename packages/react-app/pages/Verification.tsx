@@ -21,7 +21,10 @@ function Verification(props: any) {
     try {
       console.log("newhhh", router.query.email?.toString());
       console.log("newhhh", verificationCode);
-      await Auth.confirmSignUp(router.query.email.toString(), verificationCode);
+      await Auth.confirmSignUp(
+        router.query.email!.toString(),
+        verificationCode
+      );
       console.log("newhhh", "success");
       router.push("/Login");
     } catch (err: any) {
